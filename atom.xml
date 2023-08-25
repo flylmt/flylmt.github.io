@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-08-25T14:58:16.605Z</updated>
+  <updated>2023-08-25T23:46:38.579Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo+github 部署</title>
+    <link href="http://example.com/post/4f9fc186.html"/>
+    <id>http://example.com/post/4f9fc186.html</id>
+    <published>2023-08-25T23:17:09.000Z</published>
+    <updated>2023-08-25T23:46:38.579Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次部署一个个人博客记录一下</p><p>过程：</p><p>1、前期准备：GitHub、Git、Node.js</p><p>2、GitHub创建新仓库命名为username.github.io</p><ul><li>注：如果自己输入地址打不开就进入到项目：settings-&gt;pages-&gt;View Site</li></ul><p>3、npm安装hexo-cli:npm install hexo-cli</p><p>4、新建文件夹Blog作为Hexo本地资源地址，在本文件夹cmd输入：hexo init</p><p>注：如果显示hexo command not found，试试npx hexo init</p><blockquote><p>打开_config.yml修改底部deploy，连接你的github个人网站</p><p>  deploy:<br>  type: git<br>  repository: 你的github地址<br>  branch: main</p></blockquote><p>5、发博客：hexo new post “新博客的名字”</p><ul><li>注：这里的post是Blog&#x2F;scaffolds&#x2F;里的post.md，是一种格式文件，可以修改</li></ul><p>6、每次修改博客内容都要三连：hexo c&amp;&amp;hexo g&amp;&amp;hexo d</p><p>7、注意：后面要空格，包括配置文件和.md文件头的填写</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;第一次部署一个个人博客记录一下&lt;/p&gt;
+&lt;p&gt;过程：&lt;/p&gt;
+&lt;p&gt;1、前期准备：GitHub、Git、Node.js&lt;/p&gt;
+&lt;p&gt;2、GitHub创建新仓库命名为username.github.io&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注：如果自己输入地址打不开就进入到项目：se</summary>
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
