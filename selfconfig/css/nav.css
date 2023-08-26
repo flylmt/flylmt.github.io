@@ -1,0 +1,4 @@
+/* 去除导航栏选项中底下的蓝条 */
+nav *::after{
+    background-color: transparent!important;
+}
