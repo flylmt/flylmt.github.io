@@ -1,6 +1,10 @@
-http://example.com/flylmt/4f9fc186.html
+http://example.com/flylmt/6e827460.html
+http://example.com/share/index.html
 http://example.com/categories/index.html
 http://example.com/tags/index.html
+http://example.com/flylmt/4f9fc186.html
 http://example.com/flylmt/undefined.html
 http://example.com/
 http://example.com/tags/Hexo/
+http://example.com/tags/javaweb/
+http://example.com/categories/javaEE/

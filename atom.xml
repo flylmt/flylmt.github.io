@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-08-26T05:19:59.966Z</updated>
+  <updated>2023-08-26T15:38:29.636Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javaweb</title>
+    <link href="http://example.com/flylmt/6e827460.html"/>
+    <id>http://example.com/flylmt/6e827460.html</id>
+    <published>2023-08-26T15:16:33.000Z</published>
+    <updated>2023-08-26T15:38:29.636Z</updated>
+    
+    
+    
+    
+    <category term="javaEE" scheme="http://example.com/categories/javaEE/"/>
+    
+    
+    <category term="javaweb" scheme="http://example.com/tags/javaweb/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo+github 部署</title>
