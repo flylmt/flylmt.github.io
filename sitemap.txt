@@ -1,4 +1,6 @@
-http://example.com/post/4f9fc186.html
-http://example.com/post/undefined.html
+http://example.com/flylmt/4f9fc186.html
+http://example.com/categories/index.html
+http://example.com/tags/index.html
+http://example.com/flylmt/undefined.html
 http://example.com/
 http://example.com/tags/Hexo/
