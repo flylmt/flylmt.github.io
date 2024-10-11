@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>node.js | flylmt</title><meta name="author" content="flylmt"><meta name="copyright" content="flylmt"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="自 2009 年以来，Node.js 一直席卷全球。成千上万个系统基于 Node.js 构建，促使开发者在社区宣称“JavaScript 正在吞噬软件”。 Node 成功的主要因素之一是它广受欢迎的软件包管理器——npm，因为 npm 使 JavaScript 开发人员可以快速方便地共享软件包， 例如 lodash 和 moment。 1、NPM 包管理工具NPM 全称 Node Package">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js">
+<meta property="og:url" content="http://example.com/posts/bbc04bb4.html">
+<meta property="og:site_name" content="flylmt">
+<meta property="og:description" content="自 2009 年以来，Node.js 一直席卷全球。成千上万个系统基于 Node.js 构建，促使开发者在社区宣称“JavaScript 正在吞噬软件”。 Node 成功的主要因素之一是它广受欢迎的软件包管理器——npm，因为 npm 使 JavaScript 开发人员可以快速方便地共享软件包， 例如 lodash 和 moment。 1、NPM 包管理工具NPM 全称 Node Package">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.jpeg">
+<meta property="article:published_time" content="2024-10-11T05:28:03.000Z">
+<meta property="article:modified_time" content="2024-10-11T05:37:00.193Z">
+<meta property="article:author" content="flylmt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/bbc04bb4.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'node.js',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-11 13:37:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/selfconfig/css/nav.css?1"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="flylmt" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/share/"><i class="fa-fw fa fa-heart"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://wallhaven.cc/w/jxyopy')"><nav id="nav"><span id="blog-info"><a href="/" title="flylmt"><span class="site-name">flylmt</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/share/"><i class="fa-fw fa fa-heart"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">node.js</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-11T05:28:03.000Z" title="发表于 2024-10-11 13:28:03">2024-10-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-11T05:37:00.193Z" title="更新于 2024-10-11 13:37:00">2024-10-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="node.js"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>自 2009 年以来，Node.js 一直席卷全球。成千上万个系统基于 Node.js 构建，促使开发者在社区宣称“JavaScript 正在吞噬软件”。</p>
+<p>Node 成功的主要因素之一是它广受欢迎的软件包管理器——npm，因为 npm 使 JavaScript 开发人员可以快速方便地共享软件包， 例如 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/lodash">lodash</a> 和 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/moment">moment</a>。</p>
+<h2 id="1、NPM-包管理工具"><a href="#1、NPM-包管理工具" class="headerlink" title="1、NPM 包管理工具"></a>1、NPM 包管理工具</h2><p>NPM 全称 Node Package Manager，它是 JavaScript 的包管理工具, 并且是 Node.js （针对JavaScript作为服务端开发语言，在没有node.js之前，开发人员使用js只能开发前端页面，不能开发服务端，有了node.js就能使用js开发服务器端程序，平台的默认包管理工具，但是目前已经不仅仅是Node包管理器了，在前端项目中我们也在使用它来管理依赖的包；比如vue、vue-router、vuex、express、koa、react、react-dom、axios、babel、webpack等等；</p>
+<p><code>NPM 可以安装、共享、分发代码,管理项目依赖关系。</code><br><code>可从NPM服务器下载别人编写的第三方包到本地使用。</code><br><code>可从NPM服务器下载并安装别人编写的命令行程序到本地使用。</code><br><code>可将自己编写的包或命令行程序上传到NPM服务器供别人使用。</code></p>
+<h2 id="npm的配置文件"><a href="#npm的配置文件" class="headerlink" title="npm的配置文件"></a>npm的配置文件</h2><p>那么对于一个项目来说，我们如何使用npm来管理这么多包呢？</p>
+<p>事实上，我们每一个项目都会有一个对应的配置文件，无论是前端项目（Vue、React）还是后端项目（Node）这个配置文件会记录着你项目的名称、版本号、项目描述等，也会记录着你项目所依赖的其他库的信息和依赖库的版本号，这个配置文件就是package.json。</p>
+<p>那么这个配置文件如何得到呢？</p>
+<ul>
+<li>方式一：手动从零创建项目，npm init –y</li>
+<li>方式二：通过脚手架创建项目，脚手架会帮助我们生成package.json，并且里面有相关的配置</li>
+</ul>
+<h2 id="package-json常见的属性"><a href="#package-json常见的属性" class="headerlink" title="package.json常见的属性"></a>package.json常见的属性</h2><p>如果我们使用<code>npm init –y</code>，那么这些属性都是使用默认值，如果不加<code>-y</code>，我们就要一个一个手动写这些属性，如下：</p>
+<p>必须填写的属性：name、version</p>
+<ul>
+<li>name是项目的名称；</li>
+<li>version是当前项目的版本号；</li>
+<li>description是描述信息，很多时候是作为项目的基本描述；</li>
+<li>author是作者相关信息（发布时用到）；</li>
+<li>license是开源协议（发布时用到）；</li>
+<li>private属性：记录当前的项目是否是私有的；</li>
+<li><ul>
+<li>当值为true时，npm是不能发布它的，这是防止私有项目或模块不小心发布出去；</li>
+</ul>
+</li>
+<li>main属性：设置程序的入口。</li>
+</ul>
+<p>main属性有什么用呢？</p>
+<p>它是在你发布一个模块的时候会用到的，比如我们发布了axios模块，如果axios里面有一个index.js文件，那么我们通过 <code>const axios = require(&#39;axios&#39;)</code>是可以正确导入axios的，但是如果axios模块的入口我们改成了<code>src/main.js</code>，那么别人使用的时候就要先看axios源码，最后才知道需要用<code>const axios = require(&#39;axios/src/main.js&#39;)</code>才能导入成功，这就很麻烦了，所以我们在axios模块的package.json文件中定义一个main属性，用来指定这个模块的入口，比如：<code>main：src/main.js</code>，这样别人导入的时候直接写<code>const axios = require(&#39;axios&#39;)</code>就可以了，因为它会从main属性去查找入口文件的。</p>
+<p>当然我们实际项目中，因为不会被发布，所以这个属性写不写都可以，而且看上面的常见的配置文件图，使用vue脚手架和react脚手架创建的项目都有没有main，因为是我们公司自己的项目，所以不需要main。但是一般开源出去的项目都需要main，如下是axios的package.json文件，就有main。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2fa1d91f17264c54aed2bbbcd3ab2f3b~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<ul>
+<li>scripts属性用于配置一些脚本命令，以键值对的形式存在；</li>
+</ul>
+<p>配置后我们可以通过 <code>npm run 命令的key</code>来执行这个命令。对于常用的 start、 test、stop、restart可以省略掉run直接通过 npm start等方式运行，但是一般情况我们都不省略。</p>
+<ul>
+<li>dependencies属性是指定无论开发环境还是生成环境都需要依赖的包；</li>
+</ul>
+<p>通常是我们项目实际开发用到的一些库模块vue、vuex、vue-router、react、react-dom、axios等等；</p>
+<p>当我们通过<code>npm install axios</code>安装axios的时候会发现，node_modules文件夹下除了有axios还有follow-redirects这个包，这是因为axios也依赖了follow-redirects包，不信你打开axios的package.json文件，会发现它的dependencies里面也有follow-redirects，如下：</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/450d89cc780843138bb84388187fdddd~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<p>就是这样层层依赖，最后所有的包都会被安装到node_modules文件夹下。</p>
+<ul>
+<li>devDependencies属性：一些包在生产环境是不需要的，比如webpack、babel等；</li>
+</ul>
+<p>这个时候我们会通过 <code>npm install webpack --save-dev</code>，将它安装到devDependencies属性中。</p>
+<ul>
+<li>peerDependencies属性（peer:美[pɪr] 同龄）：还有一种项目依赖关系是对等依赖，也就是你依赖的一个包，它必须是以另外一个宿主包为前提的；</li>
+</ul>
+<p>比如element-plus是依赖于vue3的，当你通过npm install element-plus是可以安装到dependencies里面的，但是会有如下警告，警告的意思就是安装element-plus必须安装vue3。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/70703b471e7b4a5e9987444d0e502aff~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<p>我们打开element-plus的package.json文件，发现peerDependencies属性下的确有vue3，如下：</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f8a53b05e8c94975be3dafad603a8d00~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<p>如果有这个peerDependencies属性，安装element-plus才会警告需要安装vue3，如果没有peerDependencies属性，是没有这个警告的。</p>
+<h2 id="依赖的版本管理"><a href="#依赖的版本管理" class="headerlink" title="依赖的版本管理"></a>依赖的版本管理</h2><p>我们会发现安装的依赖版本出现：^2.0.3或~2.0.3，这是什么意思呢？</p>
+<p>npm的包通常需要遵从semver版本规范：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ruby 代码解读复制代码semver：<span class="symbol">https:</span>/<span class="regexp">/semver.org/lang</span><span class="regexp">/zh-CN/</span></span><br><span class="line">npm semver：<span class="symbol">https:</span>/<span class="regexp">/docs.npmjs.com/misc</span><span class="regexp">/semver</span></span><br></pre></td></tr></table></figure>
+
+<p>semver版本规范是X.Y.Z：</p>
+<ul>
+<li>X主版本号（major）：当你做了不兼容的 API 修改（可能不兼容之前的版本）；</li>
+<li>Y次版本号（minor）：当你做了向下兼容的功能性新增（新功能增加，但是兼容之前的版本）；</li>
+<li>Z修订号（patch）：当你做了向下兼容的问题修正（没有新功能，修复了之前版本的bug）；</li>
+</ul>
+<p>semver版本规范是X.Y.Z，一个尖尖是X不变，两个尖尖是X和Y不变。</p>
+<ul>
+<li>^x.y.z：表示<strong>x是保持不变</strong>的，y和z永远安装最新的版本；</li>
+<li>~x.y.z：表示<strong>x和y保持不变</strong>的，z永远安装最新的版本；</li>
+</ul>
+<h2 id="package-json和package-lock-json版本记录有什么用"><a href="#package-json和package-lock-json版本记录有什么用" class="headerlink" title="package.json和package-lock.json版本记录有什么用"></a>package.json和package-lock.json版本记录有什么用</h2><p>我们可以发现package.json里面记录的版本都不是一个确切的版本，而是一个大概的版本，比如当我们只有一个package.json文件，里面记录的vue版本是^2.3.1，如果这时候vue版本更新了2.4.0，当我们删掉node_modules，想要重新安装新版本，可能你会使用<code>npm install vue@2.4.0</code>命令，如果有好多库需要升级，这就很麻烦了，所以在package.json里面我们版本不写死，这样我们直接执行<code>npm install</code>就可以安装到2.4.0版本的了。</p>
+<p>可能你会说，我们在项目中安装的时候都是一个确切的版本啊，那是因为你项目中还有个package-lock.json文件，package-lock.json文件里面记录的都是最真实的版本，而不是大致版本了。如果这两个文件都存在，那么安装的时候就先看看package-lock.json文件记录的版本是不是符合package.json文件记录的大致版本吧，如果符合，那就安装package-lock.json记录的版本，如果你真的不想使用lock的版本了，那么就把package-lock.json文件删掉，重新执行npm install，那么就能安装符合package.json的最新的版本了。</p>
+<h2 id="npm-install-命令"><a href="#npm-install-命令" class="headerlink" title="npm install 命令"></a>npm install 命令</h2><ul>
+<li>npm install 会根据package.json的dependencies属性去安装依赖</li>
+<li>npm install xxx –save 会将包安装到node_modules里，并且写入到dependencies</li>
+<li>npm install xxx –save-dev 会将包安装到node_modules里，并且写入到devDependencies</li>
+</ul>
+<p>安装npm包分两种情况：</p>
+<ul>
+<li>全局安装（global install）： npm install webpack -g;</li>
+<li>项目（局部）安装（local install）： npm install webpack</li>
+</ul>
+<p>全局安装是直接将某个包安装到全局，npm全局安装的包都是一些工具包：yarn、webpack、n、cnpm等，但是类似于axios、express、koa等库文件，是会在代码中使用的，这些我们一般都是局部安装。</p>
+<p><strong>注意</strong>：并不是所有的工具包我们都是全局安装，比如webpack，我们可能全局安装，但是每个项目中又会局部安装一个webpack，这是因为每个项目的webpack版本可能不一样，都使用全局的肯定不行，一般全局的包我们只是做一个简单的使用，实际项目中还会局部安装特定的包。</p>
+<h2 id="项目安装"><a href="#项目安装" class="headerlink" title="项目安装"></a>项目安装</h2><p>项目安装会在当前目录下生产一个 node_modules 文件夹，我们之前讲解require()查找顺序时有讲解过这个包在什么情况下被查找；</p>
+<p>局部安装分为开发时依赖和生产时依赖：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">js 代码解读复制代码<span class="comment">// 默认安装开发和生产依赖</span></span><br><span class="line">npm install axios</span><br><span class="line">npm install axios --save</span><br><span class="line">npm install axios -S</span><br><span class="line">npm i axios</span><br><span class="line"></span><br><span class="line"><span class="comment">// 安装开发依赖</span></span><br><span class="line">npm install webpack --save-dev</span><br><span class="line">npm install webpack -D</span><br><span class="line">npm i webpack –D</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据package.json中的依赖包</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="npm-install-原理"><a href="#npm-install-原理" class="headerlink" title="npm install 原理"></a>npm install 原理</h2><p>很多同学之前应该已经会了 <code>npm install &lt;package&gt;</code>，但是你是否思考过它的内部原理呢？</p>
+<p>执行 npm install它背后帮助我们完成了什么操作？</p>
+<p>我们会发现还有一个称为package-lock.json的文件，它的作用是什么？</p>
+<p>从npm5开始，npm支持缓存策略（来自yarn的压力），缓存有什么作用呢？</p>
+<p>这是一幅我画出的根据 npm install 的原理图：</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a1f188d973824249a63867c77221c07b~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<h2 id="npm-install-原理图解析"><a href="#npm-install-原理图解析" class="headerlink" title="npm install 原理图解析"></a>npm install 原理图解析</h2><ol>
+<li>首先检测是否有package-lock.json文件</li>
+<li>如果有lock文件，判断lock中包的版本是否和package.json中一致<ul>
+<li>如果一致，先查缓存，查到就使用，查不到说明被删了，再重新下载（步骤3）</li>
+<li>如果不一致，重新下载（步骤3）</li>
+</ul>
+</li>
+<li>如果没有lock文件，说明没下过，就去下载<ul>
+<li>就分析包的依赖关系，然后从registry仓库中下载压缩包</li>
+<li>对压缩包进行缓存，然后解压，放到node_modules文件夹中</li>
+<li>最后会生成package-lock.json文件</li>
+</ul>
+</li>
+</ol>
+<h2 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h2><p>package-lock.json文件解析：</p>
+<ul>
+<li>name：项目的名称；</li>
+<li>version：项目的版本；</li>
+<li>lockfileVersion：lock文件的版本；</li>
+<li>requires：使用requires来跟踪模块的依赖关系；</li>
+<li>dependencies：项目的依赖，如下：</li>
+</ul>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6fb1b7380c2d449bbd20ad8e124fba77~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<p>当前项目依赖axios，但是axios依赖follow-redireacts，axios中的属性如下：</p>
+<ul>
+<li>version表示实际安装的axios的版本；</li>
+<li>resolved用来记录下载的地址，registry仓库中的位置；</li>
+<li>requires记录当前模块的依赖；</li>
+<li>integrity用来从缓存中获取索引，再通过索引去获取压缩包文件</li>
+</ul>
+<h2 id="npm其他命令"><a href="#npm其他命令" class="headerlink" title="npm其他命令"></a>npm其他命令</h2><p>我们这里再介绍几个比较常用的：</p>
+<p>卸载某个依赖包：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码npm uninstall package </span><br></pre></td></tr></table></figure>
+
+<p>强制重新build</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码npm rebuild</span><br></pre></td></tr></table></figure>
+
+<p>一般这个命令使用的比较少，因为我们一般都是直接把node_modules文件夹删掉，然后重新执行<code>npm install</code></p>
+<p>清除缓存</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码npm cache clean</span><br></pre></td></tr></table></figure>
+
+<p>npm的命令其实是非常多的，更多的命令，可以根据需要查阅官方文档：<a href="https://link.juejin.cn/?target=https://docs.npmjs.com/cli-documentation/cli">docs.npmjs.com&#x2F;cli-documen…</a></p>
+<h2 id="yarn工具"><a href="#yarn工具" class="headerlink" title="yarn工具"></a>yarn工具</h2><p>另一个node包管理工具yarn，yarn是由Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具。</p>
+<p>yarn 是为了弥补 npm 的一些缺陷而出现的，早期的npm存在很多的缺陷，比如因为<strong>没有缓存导致的安装依赖速度很慢</strong>、版本依赖混乱等等一系列的问题，虽然从npm5版本开始，进行了很多的升级和改进，但是依然很多人喜欢使用yarn。</p>
+<p>下面是npm和yarn的一些命令的对比：</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5f6e929f07064fa8b459f8ceffa28fa2~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp" alt="img"></p>
+<p><strong>注意</strong>：npm和yarn不要同时使用，否则会有管理混乱的问题。</p>
+<h2 id="cnpm工具"><a href="#cnpm工具" class="headerlink" title="cnpm工具"></a>cnpm工具</h2><p>由于一些特殊的原因，某些情况下我们没办法很好的从 <a href="https://link.juejin.cn/?target=https://registry.npmjs.org">registry.npmjs.org</a> 下载下来一些需要的包，因为网速可能比较慢。</p>
+<p>查看npm镜像：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arduino</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码npm config get registry <span class="meta"># npm config get registry</span></span><br></pre></td></tr></table></figure>
+
+<p>这时候我们可以直接设置npm的镜像为淘宝：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arduino</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码npm config set registry https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+<p>但是对于大多数人来说（比如我），并不希望将npm镜像修改了：</p>
+<ol>
+<li>第一，不太希望随意修改npm原本从官方下来包的渠道；</li>
+<li>第二，担心某天淘宝的镜像挂了或者不维护了，又要改来改去；</li>
+</ol>
+<p>这个时候，我们可以使用cnpm，并且将cnpm设置为淘宝的镜像：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arduino 代码解读复制代码npm install -g cnpm --registry=https:<span class="comment">//registry.npm.taobao.org</span></span><br><span class="line">cnpm config get registry <span class="meta"># https:<span class="comment">//r.npm.taobao.org/</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这时候我们就有两个工具了，npm是官方的镜像，cnpm是淘宝的镜像，这时候我们想用哪个就用那个了。</p>
+<h2 id="npx工具"><a href="#npx工具" class="headerlink" title="npx工具"></a>npx工具</h2><p>npx是npm5.2之后自带的一个命令。npx的作用非常多，但是比较常见的是使用它来调用项目中的某个模块的指令。</p>
+<p>我们以webpack为例：全局安装的是webpack5.1.3，全局安装之后就会在环境变量中添加webpack命令，项目安装的是webpack3.6.0。 我们先进入项目目录，然后在终端执行 webpack –version使用的是哪一个命令呢？</p>
+<p>显示结果会是 webpack 5.1.3，事实上使用的是全局的，为什么呢？</p>
+<p>原因非常简单，因为项目的webpack是在node_modules文件夹下的bin里面，所以找不到webpack，就会去全局找，找到环境变量中的命令，并且执行命令，所以打印webpack 5.1.3。</p>
+<p>如何解决这个问题呢？</p>
+<h2 id="局部命令的执行"><a href="#局部命令的执行" class="headerlink" title="局部命令的执行"></a>局部命令的执行</h2><p>那么如何使用项目（局部）的webpack，常见的是三种方式：</p>
+<ul>
+<li>方式一：明确查找到node_module下面的webpack</li>
+</ul>
+<p>在终端中使用如下命令（在项目根目录下）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码./node_modules/.<span class="property">bin</span>/webpack --version</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方式二：在 scripts定义脚本，来执行webpack；</li>
+</ul>
+<p>修改package.json中的scripts：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">js 代码解读复制代码<span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;webpack&quot;</span>: <span class="string">&quot;webpack --version&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式会优先找node_modules文件夹中的.bin文件夹中的命令，如果没有再找全局的，所以这种方式也可以。</p>
+<ul>
+<li>方式三：使用npx</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line"></span><br><span class="line"> 代码解读</span><br><span class="line">复制代码npx webpack --version</span><br></pre></td></tr></table></figure>
+
+<p>npx的原理非常简单，它会到当前目录的node_modules&#x2F;.bin目录下查找对应的命令，这种方式其实和方式一是一样的。</p>
+<h2 id="npm发布自己的包"><a href="#npm发布自己的包" class="headerlink" title="npm发布自己的包"></a>npm发布自己的包</h2><ol>
+<li>首先肯定是将自己的包的代码写好</li>
+<li>注册npm账号：<a href="https://link.juejin.cn/?target=https://www.npmjs.com/">www.npmjs.com/</a> ，选择sign up</li>
+<li>在命令行登录：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 代码解读</span><br><span class="line">复制代码npm login</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>修改package.json，填写自己的基本信息</li>
+<li>使用npm publish发布到registry上</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 代码解读</span><br><span class="line">复制代码npm publish</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>更新仓库：</li>
+</ol>
+<ul>
+<li>先修改代码</li>
+<li>修改版本号（最好符合semver规范）</li>
+<li>重新发布（npm publish）</li>
+</ul>
+<p>发布成功就可以通过<code>npm install xxx</code>使用了。</p>
+<ol>
+<li>删除发布的包：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 代码解读</span><br><span class="line">复制代码npm unpublish</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>让发布的包过期：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 代码解读</span><br><span class="line">复制代码npm deprecate</span><br></pre></td></tr></table></figure>
+
+
+
+<p>作者：cocoCola91667<br>链接：<a target="_blank" rel="noopener" href="https://juejin.cn/post/7237134263716331557">https://juejin.cn/post/7237134263716331557</a><br>来源：稀土掘金</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">flylmt</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/bbc04bb4.html">http://example.com/posts/bbc04bb4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">flylmt</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/11e64e5d.html" title="Vagrant"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Vagrant</div></div></a></div><div class="next-post pull-right"><a href="/posts/12a95043.html" title="IDE"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">IDE</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">flylmt</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/flylmt"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/flylmt" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1903588250" target="_blank" title="QQ：1903588250"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81NPM-%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">1、NPM 包管理工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">npm的配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package-json%E5%B8%B8%E8%A7%81%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">package.json常见的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E7%9A%84%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">依赖的版本管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package-json%E5%92%8Cpackage-lock-json%E7%89%88%E6%9C%AC%E8%AE%B0%E5%BD%95%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">package.json和package-lock.json版本记录有什么用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-install-%E5%91%BD%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">npm install 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85"><span class="toc-number">7.</span> <span class="toc-text">项目安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-install-%E5%8E%9F%E7%90%86"><span class="toc-number">8.</span> <span class="toc-text">npm install 原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-install-%E5%8E%9F%E7%90%86%E5%9B%BE%E8%A7%A3%E6%9E%90"><span class="toc-number">9.</span> <span class="toc-text">npm install 原理图解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package-lock-json"><span class="toc-number">10.</span> <span class="toc-text">package-lock.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-number">11.</span> <span class="toc-text">npm其他命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yarn%E5%B7%A5%E5%85%B7"><span class="toc-number">12.</span> <span class="toc-text">yarn工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnpm%E5%B7%A5%E5%85%B7"><span class="toc-number">13.</span> <span class="toc-text">cnpm工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npx%E5%B7%A5%E5%85%B7"><span class="toc-number">14.</span> <span class="toc-text">npx工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%91%BD%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="toc-number">15.</span> <span class="toc-text">局部命令的执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8C%85"><span class="toc-number">16.</span> <span class="toc-text">npm发布自己的包</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/11e64e5d.html" title="Vagrant">Vagrant</a><time datetime="2024-10-11T11:04:34.000Z" title="发表于 2024-10-11 19:04:34">2024-10-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/bbc04bb4.html" title="node.js">node.js</a><time datetime="2024-10-11T05:28:03.000Z" title="发表于 2024-10-11 13:28:03">2024-10-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/12a95043.html" title="IDE">IDE</a><time datetime="2023-11-04T04:44:53.000Z" title="发表于 2023-11-04 12:44:53">2023-11-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/340e4237.html" title="The Missing Semester">The Missing Semester</a><time datetime="2023-10-01T14:34:34.000Z" title="发表于 2023-10-01 22:34:34">2023-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/a0419e9f.html" title="CSAPP">CSAPP</a><time datetime="2023-09-30T13:23:38.000Z" title="发表于 2023-09-30 21:23:38">2023-09-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By flylmt</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2d_models/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d_models/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2d_models/assets/koharu.model.json"},"display":{"position":"left","width":80,"height":120},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html>

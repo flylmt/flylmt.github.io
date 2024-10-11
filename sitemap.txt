@@ -1,3 +1,5 @@
+http://example.com/posts/11e64e5d.html
+http://example.com/posts/bbc04bb4.html
 http://example.com/posts/4f9fc186.html
 http://example.com/posts/7f1ae6d2.html
 http://example.com/posts/e5eb39ed.html
